@@ -103,49 +103,25 @@ legend {
 /* Reset and base styles  */
 
 
+
 /*HEADER*/
+.container{
+   max-width: 1115px;
 
+
+}
 .header {
-   background:#FFFFFF;
-   max-width: 1443px;
-   min-height: 840px;
-   position: relative;
-   z-index: 1;
-   overflow: hidden;
-   
-}
-.header::after {
-   content: "";
    position: absolute;
-   z-index: -4;
-   width: 807.71px;
-   height: 544.93px;
-   left: 700px;
-   bottom: 390px;
-   transform: matrix(-0.5, 0.87, 0.87, 0.5, 0, 0);
-   border-radius: 312.159px;
-   background: #EDFDFF;
-}
-
-.header::before {
-   content: "";
-   position: absolute;
-   z-index: -3;
-   top: 0;
-   right: 23%;
-   bottom: 0;
-   left: 0;
-   background-color: #F4F9E2
-}
-.header__top{
-   margin-bottom: 251px;
+   z-index: 6;
+   padding-top: 27px;
+   padding-left: 179px;
+   width: 100%;
 }
 .wrapper{
    display: flex;
    justify-content: space-between;
    align-items: center;
-   margin: 0px 131px 0px 179px;
-   padding-top:27px ;
+
 }
 .header__logo {
    font-family: 'Larsseit-Bold';
@@ -153,8 +129,7 @@ legend {
    line-height: 27px;
    letter-spacing: -0.035em;
    color: #62D0DF;
-}
-.header__nav {
+
 }
 .nav__list {
    display: flex;
@@ -163,26 +138,33 @@ legend {
 .nav__item:not(:first-child) {
    padding-left: 29px;
 }
-.nav__item{
-   position: relative;
-}
+
 .nav__link {
    font-family: 'Larsseit-Medium';
    font-size: 14px;
    line-height: 16px;
    color: #22356F;
+   position: relative;
 }
 .nav__link:hover{
    font-weight: 600;
+   transition: all 0.1s;
 }
 .nav__link:hover::after {
+   transform: scaleX(1);
+   transition: transform 0.1s;
+
+}
+.nav__link::after {
    content: "";
    position: absolute;
-   display: block;
-   width: 50px;
-   height: 5px;
-   background: #F4F9E2;
-   box-shadow: inset 0px -1px 0px #22356F;
+   display:block;
+   width: 100%;
+   height: 1px;
+   background-color:  #22356F;
+   bottom: -11px;
+   transform: scaleY(0);
+
 
 }
 .header__button {
@@ -190,24 +172,68 @@ legend {
    height: 50px;
    background-color: #62D0DF;
    border-radius: 50px;
-   padding: 0 30px;
+}
+.header__button:hover{
+   box-shadow: 1px 1px 5px #000;
 }
 .button__text {
    font-family: 'Larsseit';
    font-size: 14px;
    line-height: 50px;
    display: flex;
-   align-items: center;
+   justify-content: center;
    text-transform: uppercase;
    color: #FFFFFF;
 }
 
 /* HEADER CONTENT*/
 
-.header-content {
-   max-width: 484px;
-   margin-left: 179px;
+
+.header-content{
+   width: 100%;
+   height: 840px;
+   position: relative;
+   z-index: -5;
+   overflow: hidden;
+
 }
+
+.content__wrapper{
+   padding-top: 241px;
+   margin-left: 179px;
+
+}
+
+.header-content::after {
+   content: "";
+   position: absolute;
+   z-index: -4;
+   width: 807px;
+   height: 544px;
+   left: 700px;
+   bottom: 390px;
+   transform: matrix(-0.5, 0.87, 0.87, 0.5, 0, 0);
+   border-radius: 312px;
+   background: #EDFDFF;
+}
+
+.header-content::before {
+   content: "";
+   position: absolute;
+   z-index: -3;
+   top: 0;
+   right: 23%;
+   bottom: 0;
+   left: 0;
+   background-color:  rgba(244, 249, 226, 1);
+}
+
+
+.header__content-main{
+   width: 469px;
+   position: relative;
+}
+
 
 .header-headline {
    font-family: 'Larsseit-Bold';
@@ -230,10 +256,10 @@ legend {
    font-size: 24px;
    line-height: 42px;
    color: #22356F;
-   margin-bottom: 63px;
+   padding-bottom: 63px;
 }
 
-.content__button span {
+.content__button {
    font-family: 'Larsseit';
    font-size: 16px;
    line-height: 23px;
@@ -241,36 +267,37 @@ legend {
    align-items: center;
    letter-spacing: 0.1em;
    color: #FFFFFF;
-   margin-bottom: 75px;
    width: 150px;
    height: 50px;
    padding:0 30px;
    background: #F9B640;
 }
-
-.header__content-bg::after{
-   content: "";
-   position: absolute;
-   z-index: -1;
-   left:700px;
-   bottom: 40px;
-   background-image: url('../img/section1.png');
-   background-repeat: no-repeat;
-   width: 971.96px;
-   height: 875.78px;
+.content__button:hover{
+   color: #fce7c3;
 }
 
+.header__content-bg{
+   content: '';
+   background-image: url('../img/section1.png');
+   background-repeat: no-repeat;
+   width: 743px;
+   height: 824px;
+   position: absolute;
+   left: 530px;
+   bottom: -20px;
+   z-index: 3;
+}
 
-/* SECTION 1*/
+/* SECTION 2*/
 
 .main{
-   max-width: 1443px;
+   width: 100%;
 }
 .description {
    height: 607px;
    background-color: #62D0DF;
 }
-.container {
+.container1 {
    margin-left: 179px;
    display: flex;
    justify-content: space-between;
@@ -350,8 +377,6 @@ legend {
 }
 
 /*Section help box*/
-.help__box {
-}
 .box__list {
    display: flex;
    margin-bottom: 120px;
@@ -449,13 +474,13 @@ legend {
    background: #22356F
 }
 .next-box__item:nth-child(2){
-   background: #0052C1;;
+   background: #0052C1;
 }
 .next-box__item:nth-child(3){
    background-image: url('../img/str.jpg');
 }
 .next-box__item:nth-child(4){
-   background: #62D0DF;;
+   background: #62D0DF;
 }
 .next-box__item:nth-child(5){
    background: #DEE1FF;
@@ -466,7 +491,7 @@ legend {
 
 /*SECTION TRAINING*/
 .training {
-   height: 542px;
+   min-height: 542px;
 }
 
 .training__block {
@@ -515,8 +540,6 @@ legend {
    height: 800px;
    margin-right:106px ;
 }
-.should-know__block {
-}
 .should-know__top {
    font-family: 'Larsseit';
    font-size: 16px;
@@ -549,7 +572,9 @@ legend {
    letter-spacing: 0.1em;
    color: #FAB63E;
 }
-
+.should-know__bottom:hover{
+   color: #fcda9e;
+}
 /*CONTACT*/
 
 
@@ -589,7 +614,7 @@ legend {
    line-height: 53px;
    letter-spacing: -0.005em;
    color: #FFFFFF;
-   margin-bottom: 90px;
+   padding-bottom: 70px;
    
 }
 .contact__bottom {
@@ -600,6 +625,10 @@ legend {
    align-items: center;
    letter-spacing: 0.1em;
    color: #62D0DF;
+   margin-bottom:42px;
+}
+.contact__bottom:hover{
+   color: #01899b;
 }
 .contact__bg {
    background-image: url('../img/man2.jpg');
@@ -610,7 +639,7 @@ legend {
 
 /*FOOTER*/
 .footer {
-   max-width: 1443px;
+   width: 100%;
 }
 .footer__top {
    display: flex;
@@ -676,6 +705,7 @@ legend {
 .footer__bottom {
    height: 80px;
    background-color: #62D0DF;
+
 }
 .bottom__text {
    font-family: 'Larsseit-Bold';
@@ -692,5 +722,7 @@ legend {
    background-image: url('../img/©.svg');
    background-repeat: no-repeat;
    width: 9px;
-   height: 12px;
+   height: 9px;
+   margin-right: 6px;
+
 }
